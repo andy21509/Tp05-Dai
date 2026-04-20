@@ -1,0 +1,7 @@
+Nosotros dedujimos las propiedades de la api apartir de la documentación, en la cual se podía probar. Con eso descubrimos que se llaman a los pokemon por el nombre o por el index en la pokedex.
+
+Por ejemplo: pokemon/bulbasur = pokemon/1
+
+Pokémon devuelve cada pokemon individualmente, type devuelve los tipos(tipo agua, siniestro, hada, etc), move(karate-chop, pound, etc). Estos endpoints los encotramos buscando https://pokeapi.co/api/v2/, donde te aparece cada uno, después si queríamos ver que nos tiraba teníamos que hacer https://pokeapi.co/api/v2/type o https://pokeapi.co/api/v2/ ability
+
+Si se encuentra un error, la consola tira "Not Found" o "Bad Request"
