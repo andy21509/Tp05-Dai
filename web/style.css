@@ -135,6 +135,7 @@ body {
     -8px  8px  0 0 #660000,
      8px  8px  0 0 #660000,
     0 20px 60px rgba(0,0,0,0.75);
+
 }
 
 /* LCD screen pseudo */
@@ -243,3 +244,4 @@ body {
   padding: 2px 0;
   min-height: 22px;
 }
+
