@@ -11,7 +11,7 @@
 <body>
     <div id="buscar">
         <input type="text" id="pokemonNombre">
-        <button onclick="getPokemonByName()">Buscar</button>
+        <button onclick="if(document.getElementById('pokemonNombre').value !=''){getPokemonByName()}">Buscar</button>
     </div>
     <div id="MostrarPokemon">
         <h1 id="nombre"></h1>
