@@ -9,7 +9,8 @@ async function getPokemonByName() {
     if (res.ok) {
         const data = await res.json();
 
-        let pokemon = { nombre: data.name, imagen: data.sprites.front_default, tipos: data.types.map(t => t.type.name).join(", "), peso: "Lb: " + data.weight, altura: "Inch: " + data.height }
+        let pokemon = crearPokemon(data)
+
         Object.entries(pokemon).forEach(([key, value]) => {
             if (key != "imagen") {
                 document.getElementById(key).innerHTML = value
@@ -18,13 +19,20 @@ async function getPokemonByName() {
             }
         })
     } else {
-        document.getElementById("nombre").innerHTML = "No se encontro ningun pokemon"
-        document.getElementById("imagen").src = ""
-        document.getElementById("tipos").innerHTML = ""
-        document.getElementById("peso").innerHTML = ""
-        document.getElementById("altura").innerHTML = ""
-        
+        reiniciarVista()
     }
+}
+
+function reiniciarVista() {
+    document.getElementById("nombre").innerHTML = "No se encontro ningun pokemon"
+    document.getElementById("imagen").src = ""
+    document.getElementById("tipos").innerHTML = ""
+    document.getElementById("peso").innerHTML = ""
+    document.getElementById("altura").innerHTML = ""
+}
+
+function crearPokemon(data) {
+    return { nombre: data.name, imagen: data.sprites.front_default, tipos: data.types.map(t => t.type.name).join(", "), peso: "Lb: " + data.weight, altura: "Inch: " + data.height }
 }
 
 
